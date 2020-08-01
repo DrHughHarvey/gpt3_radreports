@@ -47,6 +47,26 @@ Save a file named openai.cfg into your api folder containing your API secret key
 Link your gpt3 virtual environment to the config file conatining the API key   
 `OPENAI_CONFIG=gpt3/api/openai.cfg`  
 
+## Create a training pathway to 'prime' GPT3 for the specific task
+
+GPT3 can only 'solve' the task if it has been shown a few examples (known as 'few-shot learning'), so we need to create some cases for it to learn from - this is called _priming_.
+
+To be able to send examples to GPT3 via our API we need create a GPT object with the following parameters:   
+*`engine` - this will be `davinci` which is the current version of the GPT3 engine  
+*`temperature` - this is a setting between 0-1 which tells GPT3 how accurate or creative to  be - 0 being very accurate, 1 being more creative  
+*`max_tokens` - how many characters do we want the output to be?
+
+```
+from api import GPT
+
+gpt = GPT(engine="davinci",
+          temperature=0.2,
+          max_tokens=1000)
+```
+
+
+## Build a web interface to allow user input and visualisation of the output  
+
 Test it is all working by running an example script  
 `python gpt3/examples/run_latex_app.py`  
 
