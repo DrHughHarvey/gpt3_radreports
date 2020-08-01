@@ -31,7 +31,7 @@ The project is in three parts:
 ### Set up the API configuration in a virtual environment
 
 The code in this repo is based on`ShreyaShankar's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)  
-I also reocmmend this [youtube video](https://youtu.be/9g66yO0Jues) to explain various elements of this sandbox.
+I also recommend this [youtube video](https://youtu.be/9g66yO0Jues) to explain various elements of this sandbox.
 
 _The following has only been tested on MacOS Catalina_
 
@@ -112,7 +112,7 @@ Low signal intensity foci seen in the posterior aspect of the peripheral zone at
 There are a couple of areas which could be cancerous in the outer part of the prostate.  
 ```
 
-### Example 4
+### Example 5
 ```
 *input*  
 Prominent bilobed paramedial extra-axial mass along the convexity centered at the level of the posterior frontal and anterior parietal lobes with prominent posterior dural tail and occlusion of the adjacent superior sagittal sinus. Prominent surrounding reactive edema, left greater than right. Mild lateral shift but no herniation. Smaller extraaxial mass overlying the right mid temporal lobe.  
@@ -120,7 +120,7 @@ Prominent bilobed paramedial extra-axial mass along the convexity centered at th
 There is one large right-sided mass near the front of the brain, and another smaller one on the same side. These are likely to be tumours, with signs of brain swelling.  
 ```
 
-### Example 4
+### Example 6
 ```
 *input*  
 The heart size is normal and there is no pericardial effusion. The aorta and great vessels are normal in caliber. The central pulmonary arteries are patent with no evidence of embolus. There is no significant mediastinal, hilar, or axillary lymphadenopathy. The trachea and mainstem bronchi are patent. The esophagus is normal in course and caliber. The lungs are clear with no infiltrates, effusions, or masses. There is no pneumothorax. Scans through the upper abdomen are unremarkable. The osseous structures in the chest are intact.
