@@ -16,7 +16,7 @@ significant posterior acoustic shadowing in keeping with cholecystolithiasis
 ```
 where the lay version may be translated as:
 ```markdown
-The are several gallstones within the gallbladder
+There are several dense objects typical of gallstones within the gallbladder
 ```
 
 In keeping with the recent trend towards a more patient-focussed model of healthcare, and increasing appetite for digital tools to enable and empower both physicians and patients, this project aims to bridge the 'language' barrier that lies between radiologists and patients by using the powerful natural language capabilities of GPT3.
@@ -51,7 +51,7 @@ Link your gpt3 virtual environment to the config file conatining the API key
 
 GPT3 can only 'solve' the task if it has been shown a few examples (known as 'few-shot learning'), so we need to create some cases for it to learn from - this is called _priming_.
 
-To be able to send examples to GPT3 via our API we need create a GPT object with the following parameters:   
+To be able to send examples to GPT3 via our API we need create a 'GPT object' with the following parameters:   
 *`engine` - this will be `davinci` which is the current version of the GPT3 engine  
 *`temperature` - this is a setting between 0-1 which tells GPT3 how accurate or creative to  be - 0 being very accurate, 1 being more creative  
 *`max_tokens` - how many characters do we want the output to be?
@@ -64,11 +64,42 @@ gpt = GPT(engine="davinci",
           max_tokens=1000)
 ```
 
+Next we need to create a priming example  
+```
+from api import Example
+
+gallstone = Example(input="There are several hyerechoic calcific foci within the gallbladder with  
+significant posterior acoustic shadowing in keeping with cholecystolithiasis", output="There are several dense objects typical of gallstones within the gallbladder")
+```
+And then add that example (and others) to your 'GPT object'  
+```
+gpt.add_example(gallstone)
+```
+
 
 ## Build a web interface to allow user input and visualisation of the output  
 
-Test it is all working by running an example script  
+Test the API is working by running an example script  
 `python gpt3/examples/run_latex_app.py`  
+
+
+Create a simple user interface configuration with a description, a button and some placeholder text  
+```
+from api import UIConfig
+
+config = UIConfig(description="Translate clinical radiology reports into lay language",
+                  button_text="Go",
+                  placeholder="Lay version")
+```
+
+Load the web app
+
+```
+from api import demo_web_app
+
+demo_web_app(gpt, config)
+```
+
 
 
 
