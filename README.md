@@ -37,8 +37,8 @@ _The following has only been tested on MacOS Catalina_
 * Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
 Clone [this](https://github.com/DrHughHarvey/gpt3_radreports) repository, and in Terminal install the Python virtual environnment package, create a new virtual environment called 'gpt3' and activate it:  
-`pip3 install virtualenv
-pip3 -m venv $gpt3 
+`pip3 install virtualenv  
+pip3 -m venv $gpt3   
 source gpt3/bin/activate`  
 Install the requirements  
 `pip install -r gpt3/api/requirements.txt`  
@@ -54,14 +54,14 @@ GPT3 can only 'solve' the task if it has been shown a few examples (known as 'fe
 To be able to send examples to GPT3 via our API we need create a 'GPT object' with the following parameters:   
 *`engine` - this will be `davinci` which is the current version of the GPT3 engine  
 *`temperature` - this is a setting between 0-1 which tells GPT3 how accurate or creative to  be - 0 being very accurate, 1 being more creative  
-*`max_tokens` - how many characters do we want the output to be?
+*`max_tokens` - how many characters do we want the output to be?  
 
 ```
 gpt = GPT(engine="davinci", temperature=0.2, max_tokens=1000)
 ```
   
-Next we create some examples we want to use to _prime_ GPT3.
-_You can change these, and add more, to help GPT3 better adjust to the task_  
+Next we create some examples we want to use to _prime_ GPT3.  
+_You can change these, and add more, to help GPT3 better adjust to the task_   
 ```
 gpt.add_example(Example("There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis", "There are several dense objects typical of gallstones within the gallbladder"))
 gpt.add_example(Example("What are you?", "I'm an example."))
@@ -87,7 +87,7 @@ config = UIConfig(
 )
 ```
 
-Load the web app
+Load the web app  
 
 ```
 demo_web_app(gpt, config)
