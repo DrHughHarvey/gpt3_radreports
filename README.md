@@ -16,9 +16,9 @@ where the lay version may be translated as:
 ```markdown
 The are several gallstones within the gallbladder
 ```
-Human translation of these reports would be extremely time consuming, hence this is not done in routine clinical practice. Instead radiology reports are read by clinicians, and then summarised either verbally or via a clinic letter to their patient. Current radiological practice therefore is not patient-centric in that the end-user of the service a) does not recieve their report, b) cannot be expected to understand their report even if they did receive it.
+Human translation of standard radiology reports into lay terms would be extremely time consuming, hence this is never done in routine clinical practice. Instead radiology reports are read by clinicians, and then summarised either verbally or via a clinic letter to their patient. Current radiological practice therefore is non patient-centric in that the end-user of the service neither receives their report, nor could understand their report if they did receive it. 
 
-
+In keeping with the recent trend towards a more patient-focussed model of healthcare, and increasing appetite for digital tools to enable and empower patients, this project aims to bridge the 'language' barrier that lies between radiologists and patients by using the powerful natural language capabilities of GPT3.
 
 ## Basics
 
