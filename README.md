@@ -30,7 +30,8 @@ The project is in three parts:
 
 ### Set up the API configuration in a virtual environment
 
-The code in this repo is based on`ShreyaShankar's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)
+The code in this repo is based on`ShreyaShankar's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)  
+I also reocmmend this [youtube video](https://youtu.be/9g66yO0Jues) to explain various elements of this sandbox.
 
 _The following has only been tested on MacOS Catalina_
 
