@@ -17,6 +17,14 @@ where the lay version may be translated as:
 The are several gallstones within the gallbladder
 ```
 
-## Set up
+## Basics
+
+(The following has only been tested on MacOS Catalina)
+
+* Obtain [OpenAI API key](https://beta.openai.com/)
+* Install [python3](https://realpython.com/installing-python/) 
+* Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
+
+
 
 
