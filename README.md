@@ -36,19 +36,19 @@ _The following has only been tested on MacOS Catalina_
 * Install [python3](https://realpython.com/installing-python/) 
 * Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
-Clone this repository, and in Terminal install the Python virtual environnment package, create a new virtual environment called 'gpt3' and activate it:
-`pip3 install virtualenv`
-`pip3 -m venv $gpt3`
-`source gpt3/bin/activate`
-Install the requirements
-`pip install -r gpt3/api/requirements.txt`
-Save a file named openai.cfg into your api folder containing your API secret key as such:
-`OPENAI_KEY=sk-INSERTKEYHERE`
-Link your gpt3 virtual environment to the config file conatining the API key 
-`OPENAI_CONFIG=gpt3/api/openai.cfg`
+Clone this repository, and in Terminal install the Python virtual environnment package, create a new virtual environment called 'gpt3' and activate it:  
+`pip3 install virtualenv`  
+`pip3 -m venv $gpt3`  
+`source gpt3/bin/activate`  
+Install the requirements  
+`pip install -r gpt3/api/requirements.txt`  
+Save a file named openai.cfg into your api folder containing your API secret key as such:  
+`OPENAI_KEY=sk-INSERTKEYHERE`  
+Link your gpt3 virtual environment to the config file conatining the API key   
+`OPENAI_CONFIG=gpt3/api/openai.cfg`  
 
-Test it is all working by running an example script
-`python gpt3/examples/run_latex_app.py`
+Test it is all working by running an example script  
+`python gpt3/examples/run_latex_app.py`  
 
 
 
