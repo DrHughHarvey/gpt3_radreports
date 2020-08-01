@@ -37,9 +37,11 @@ _The following has only been tested on MacOS Catalina_
 * Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
 Clone [this](https://github.com/DrHughHarvey/gpt3_radreports) repository, and in Terminal install the Python virtual environnment package, create a new virtual environment called 'gpt3' and activate it:  
-`pip3 install virtualenv  
+```
+pip3 install virtualenv  
 pip3 -m venv $gpt3   
-source gpt3/bin/activate`  
+source gpt3/bin/activate
+```
 Install the requirements  
 `pip install -r gpt3/api/requirements.txt`  
 Save a file named openai.cfg into your api folder containing your API secret key as such:  
