@@ -9,7 +9,8 @@ The aim of this project is to build a simple web interface using the OpenAI GPT-
 
 An example of the esoteric nature of radiology reports is:
 ```markdown
-There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis
+There are several hyerechoic calcific foci within the gallbladder with  
+significant posterior acoustic shadowing in keeping with cholecystolithiasis
 ```
 where the lay version may be translated as:
 ```markdown
