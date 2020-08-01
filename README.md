@@ -68,8 +68,10 @@ Next we need to create a priming example
 ```
 from api import Example
 
-gallstone = Example(input="There are several hyerechoic calcific foci within the gallbladder with  
-significant posterior acoustic shadowing in keeping with cholecystolithiasis", output="There are several dense objects typical of gallstones within the gallbladder")
+gallstone = Example(input="There are several hyerechoic calcific foci within the  
+gallbladder with significant posterior acoustic shadowing in keeping with  
+cholecystolithiasis", output="There are several dense objects typical of  
+gallstones within the gallbladder")
 ```
 And then add that example (and others) to your 'GPT object'  
 ```
