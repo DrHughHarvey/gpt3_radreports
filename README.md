@@ -1,3 +1,5 @@
+
+
 ##Introduction
 
 Radiologists use a specific ontology for describing imaging findings in their reports. This language is esoteric and poorly understood by lay readers.
