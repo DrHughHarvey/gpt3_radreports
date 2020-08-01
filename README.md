@@ -28,7 +28,7 @@ The project is in three parts:
 
 ## Basics
 
-The code in this repo is based on`ShreyaShankar's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)
+The code in this repo is based on @ShreyaShankar 's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)
 
 The following has only been tested on MacOS Catalina.
 
