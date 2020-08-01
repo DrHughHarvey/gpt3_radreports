@@ -48,6 +48,8 @@ Save a file named openai.cfg into your api folder containing your API secret key
 `OPENAI_KEY=sk-INSERTKEYHERE`  
 Link your gpt3 virtual environment to the config file conatining the API key   
 `OPENAI_CONFIG=gpt3/api/openai.cfg`  
+  
+    
 
 ## Create a training pathway to 'prime' GPT3 for the specific task
 
@@ -72,6 +74,8 @@ gpt.add_example(Example("What are you?", "I'm an example."))
 gpt.add_example(Example("What are you?", "I'm an example."))
 gpt.add_example(Example("What are you?", "I'm an example."))
 ```
+  
+    
 
 ## Build a web interface to allow user input and visualisation of the output  
 
