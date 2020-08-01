@@ -1,7 +1,7 @@
 # Introduction
 
 Radiologists use a specific ontology for describing imaging findings in their reports. This language is esoteric and poorly understood by lay readers.
-With the advent of few-shot learning natural language models such as GPT3, it is now possible to train billion paramter networks to convert input text into output text in a stylised fashion, using only a few training examples.
+With the advent of few-shot learning natural language models such as GPT3, it is now possible to train billion parameter networks to convert input text into output text in a stylised fashion, using only a few training examples.
 
 The aim of this project is to build a simple web interface using the`OpenAI GPT-3 API`where the input prompt can be any clinical radiology report and the resulting output is an understandable lay version.
 
@@ -49,7 +49,7 @@ Install the requirements
 `pip install -r gpt3/api/requirements.txt`  
 Save a file named openai.cfg into your api folder containing your API secret key as such:  
 `OPENAI_KEY=sk-INSERTKEYHERE`  
-Link your gpt3 virtual environment to the config file conatining the API key   
+Link your gpt3 virtual environment to the config file containing the API key   
 `OPENAI_CONFIG=gpt3/api/openai.cfg`  
   
     
