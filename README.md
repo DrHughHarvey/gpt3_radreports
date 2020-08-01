@@ -78,7 +78,55 @@ gpt.add_example(Example("What are you?", "I'm an example."))
 gpt.add_example(Example("What are you?", "I'm an example."))
 ```
   
-    
+The examples I have used are as follows:  
+
+### Example 1
+```
+*input*  
+There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis.  
+*output*  
+There are several dense objects typical of gallstones within the gallbladder.  
+```
+
+### Example 2
+```
+*input*  
+The lungs and pleura are clear and the cardiomedistinal silhouette is unremarkable. No rib lesions.  
+*output*  
+Normal chest X-ray. 
+```
+
+### Example 3
+```
+*input*  
+No mass, haemorrhage or hydrocephalus. Basal ganglia and posterior fossa structures are normal. No established major vessel vascular territory infarct. No intra or extra axial collection. The basal cisterns and foramen magnum are patent. The air cells of the petrous temporal bone are non-opacified. No fracture demonstrated.  
+*output*  
+Normal CT head.  
+```
+
+### Example 4
+```
+*input*  
+Low signal intensity foci seen in the posterior aspect of the peripheral zone at the level of the mid gland toward the apex measuring 0.9 cm on the left and 0.9 cm on the right with associated early enhancement and possible restricted diffusion. Findings are concerning for neoplastic foci.
+*output*  
+There are a couple of areas which could be cancerous in the outer part of the prostate.  
+```
+
+### Example 4
+```
+*input*  
+Prominent bilobed paramedial extra-axial mass along the convexity centered at the level of the posterior frontal and anterior parietal lobes with prominent posterior dural tail and occlusion of the adjacent superior sagittal sinus. Prominent surrounding reactive edema, left greater than right. Mild lateral shift but no herniation. Smaller extraaxial mass overlying the right mid temporal lobe.  
+*output*  
+There is one large right-sided mass near the front of the brain, and another smaller one on the same side. These are likely to be tumours, with signs of brain swelling.  
+```
+
+### Example 4
+```
+*input*  
+The heart size is normal and there is no pericardial effusion. The aorta and great vessels are normal in caliber. The central pulmonary arteries are patent with no evidence of embolus. There is no significant mediastinal, hilar, or axillary lymphadenopathy. The trachea and mainstem bronchi are patent. The esophagus is normal in course and caliber. The lungs are clear with no infiltrates, effusions, or masses. There is no pneumothorax. Scans through the upper abdomen are unremarkable. The osseous structures in the chest are intact.
+*output*  
+Nothing concerning was found.
+```
 
 ### Build a web interface to allow user input and visualisation of the output  
 
