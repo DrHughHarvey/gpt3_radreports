@@ -1,4 +1,4 @@
-## Introduction
+# Introduction
 
 Radiologists use a specific ontology for describing imaging findings in their reports. This language is esoteric and poorly understood by lay readers.
 With the advent of few-shot learning natural language models such as GPT3, it is now possible to train billion paramter networks to convert input text into output text in a stylised fashion, using only a few training examples.
@@ -26,7 +26,9 @@ The project is in three parts:
 1. Create a training pathway to 'prime' GPT3 for the specific task
 1. Build a web interface to allow user input and visualisation of the output
 
-## Set up the API configuration in a virtual environment
+## Building the system
+
+### Set up the API configuration in a virtual environment
 
 The code in this repo is based on`ShreyaShankar's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)
 
@@ -51,7 +53,7 @@ Link your gpt3 virtual environment to the config file conatining the API key
   
     
 
-## Create a training pathway to 'prime' GPT3 for the specific task
+### Create a training pathway to 'prime' GPT3 for the specific task
 
 GPT3 can only 'solve' the task if it has been shown a few examples (known as 'few-shot learning'), so we need to create some cases for it to learn from - this is called _priming_. This is done using a simple python script. The full code is in `gpt3/examples/run_radiologyreports.py`  
 
@@ -77,7 +79,7 @@ gpt.add_example(Example("What are you?", "I'm an example."))
   
     
 
-## Build a web interface to allow user input and visualisation of the output  
+### Build a web interface to allow user input and visualisation of the output  
 
 Test the API is working by running the example script included in the repository:  
 `python gpt3/examples/run_radiologyreports.py`  
