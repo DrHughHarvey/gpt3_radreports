@@ -49,7 +49,7 @@ Link your gpt3 virtual environment to the config file conatining the API key
 
 ## Create a training pathway to 'prime' GPT3 for the specific task
 
-GPT3 can only 'solve' the task if it has been shown a few examples (known as 'few-shot learning'), so we need to create some cases for it to learn from - this is called _priming_.
+GPT3 can only 'solve' the task if it has been shown a few examples (known as 'few-shot learning'), so we need to create some cases for it to learn from - this is called _priming_. This is done using a simple python script. The full code is in `gpt3/examples/run_radiologyreports.py`  
 
 To be able to send examples to GPT3 via our API we need create a 'GPT object' with the following parameters:   
 *`engine` - this will be `davinci` which is the current version of the GPT3 engine  
@@ -60,7 +60,8 @@ To be able to send examples to GPT3 via our API we need create a 'GPT object' wi
 gpt = GPT(engine="davinci", temperature=0.2, max_tokens=1000)
 ```
   
-Create examples to prime GPT3
+Next we create some examples we want to use to _prime_ GPT3.
+_You can change these, and add more, to help GPT3 better adjust to the task_  
 ```
 gpt.add_example(Example("There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis", "There are several dense objects typical of gallstones within the gallbladder"))
 gpt.add_example(Example("What are you?", "I'm an example."))
@@ -72,8 +73,8 @@ gpt.add_example(Example("What are you?", "I'm an example."))
 
 ## Build a web interface to allow user input and visualisation of the output  
 
-Test the API is working by running an example script  
-`python gpt3/examples/radiologyreports.py`  
+Test the API is working by running the example script included in the repository:  
+`python gpt3/examples/run_radiologyreports.py`  
 
 
 Create a simple user interface configuration with a description, a button and some placeholder text  
