@@ -19,23 +19,36 @@ where the lay version may be translated as:
 The are several gallstones within the gallbladder
 ```
 
-In keeping with the recent trend towards a more patient-focussed model of healthcare, and increasing appetite for digital tools to enable and empower patients, this project aims to bridge the 'language' barrier that lies between radiologists and patients by using the powerful natural language capabilities of GPT3.
+In keeping with the recent trend towards a more patient-focussed model of healthcare, and increasing appetite for digital tools to enable and empower both physicians and patients, this project aims to bridge the 'language' barrier that lies between radiologists and patients by using the powerful natural language capabilities of GPT3.
 
 The project is in three parts:
 1. Set up the API configuration in a virtual environment
 1. Create a training pathway to 'prime' GPT3 for the specific task
 1. Build a web interface to allow user input and visualisation of the output
 
-## Basics
+## Set up the API configuration in a virtual environment
 
-The code in this repo is based on'ShreyaShankar's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)
+The code in this repo is based on`ShreyaShankar's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)
 
-The following has only been tested on MacOS Catalina.
+_The following has only been tested on MacOS Catalina_
 
 * Obtain [OpenAI API key](https://beta.openai.com/)
 * Install [python3](https://realpython.com/installing-python/) 
 * Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
+Clone this repository, and in Terminal install the Python virtual environnment package, create a new virtual environment called 'gpt3' and activate it:
+`pip3 install virtualenv`
+`pip3 -m venv $gpt3`
+`source gpt3/bin/activate`
+Install the requirements
+`pip install -r gpt3/api/requirements.txt`
+Save a file named openai.cfg into your api folder containing your API secret key as such:
+`OPENAI_KEY=sk-INSERTKEYHERE`
+Link your gpt3 virtual environment to the config file conatining the API key 
+`OPENAI_CONFIG=gpt3/api/openai.cfg`
+
+Test it is all working by running an example script
+`python gpt3/examples/run_latex_app.py`
 
 
 
