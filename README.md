@@ -19,6 +19,7 @@ The are several gallstones within the gallbladder
 
 ## Basics
 
+The code in this repo is based on `ShreyaShankur's gpt3-sandbox` -> [here](https://github.com/shreyashankar/gpt3-sandbox)
 (The following has only been tested on MacOS Catalina)
 
 * Obtain [OpenAI API key](https://beta.openai.com/)
