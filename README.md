@@ -57,48 +57,38 @@ To be able to send examples to GPT3 via our API we need create a 'GPT object' wi
 *`max_tokens` - how many characters do we want the output to be?
 
 ```
-from api import GPT
-
-gpt = GPT(engine="davinci",
-          temperature=0.2,
-          max_tokens=1000)
+gpt = GPT(engine="davinci", temperature=0.2, max_tokens=1000)
 ```
-
-Next we need to create a priming example  
+  
+Create examples to prime GPT3
 ```
-from api import Example
-
-gallstone = Example(input="There are several hyerechoic calcific foci within the  
-gallbladder with significant posterior acoustic shadowing in keeping with  
-cholecystolithiasis", output="There are several dense objects typical of  
-gallstones within the gallbladder")
+gpt.add_example(Example("There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis", "There are several dense objects typical of gallstones within the gallbladder"))
+gpt.add_example(Example("What are you?", "I'm an example."))
+gpt.add_example(Example("What are you?", "I'm an example."))
+gpt.add_example(Example("What are you?", "I'm an example."))
+gpt.add_example(Example("What are you?", "I'm an example."))
+gpt.add_example(Example("What are you?", "I'm an example."))
 ```
-And then add that example (and others) to your 'GPT object'  
-```
-gpt.add_example(gallstone)
-```
-
 
 ## Build a web interface to allow user input and visualisation of the output  
 
 Test the API is working by running an example script  
-`python gpt3/examples/run_latex_app.py`  
+`python gpt3/examples/radiologyreports.py`  
 
 
 Create a simple user interface configuration with a description, a button and some placeholder text  
 ```
-from api import UIConfig
-
-config = UIConfig(description="Translate clinical radiology reports into lay language",
-                  button_text="Go",
-                  placeholder="Lay version")
+config = UIConfig(
+    description="Translate clinical radiology reports into lay versions",
+    button_text="Go",
+    placeholder="Lay version",
+    show_example_form=True,
+)
 ```
 
 Load the web app
 
 ```
-from api import demo_web_app
-
 demo_web_app(gpt, config)
 ```
 
