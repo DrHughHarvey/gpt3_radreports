@@ -8,6 +8,7 @@ import openai
 from flask import Flask, request, Response
 
 from .gpt import set_openai_key, Example
+"""The line above gives the error ImportError: attempted relative import with no known parent package"""
 from .ui_config import UIConfig
 
 CONFIG_VAR = "OPENAI_CONFIG"
