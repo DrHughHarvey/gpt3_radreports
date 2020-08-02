@@ -130,7 +130,7 @@ Nothing concerning was found.
 
 ### Build a web interface to allow user input and visualisation of the output  
 
-<span style="color:yellow">This part is incomplete... be warned!</span>
+<span style="color:orange">This part is incomplete... be warned!</span>
 
 Test the API is working by running the example script included in the repository:  
 `python gpt3/examples/run_radiologyreports.py`  
