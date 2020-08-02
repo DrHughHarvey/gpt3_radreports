@@ -1,4 +1,4 @@
-"""Runs the web app given a GPT object and UI configuration."""
+"""Start the web app with a GPT object and basic user interface."""
 
 from http import HTTPStatus
 import json
@@ -15,23 +15,25 @@ KEY_NAME = "OPENAI_KEY"
 
 
 def demo_web_app(gpt, config=UIConfig()):
-    """Creates Flask app to serve the React app."""
+    """This part is my attempt to use Flask to serve a React app. (I don't know if this works, I have never used React before)"""
     app = Flask(__name__)
 
     app.config.from_envvar(CONFIG_VAR)
     set_openai_key(app.config[KEY_NAME])
 
+    """Get the parameters from the config file"""
     @app.route("/params", methods=["GET"])
     def get_params():
         # pylint: disable=unused-variable
         response = config.json()
         return response
 
+    """If things don't work, which they proabbly won't"""
     def error(err_msg, status_code):
         return Response(json.dumps({"error": err_msg}), status=status_code)
 
     def get_example(example_id):
-        """Gets a single example or all the examples."""
+        """I'm not sure if this gets one example or all the examples, or just one of several examples"""
         # return all examples
         if not example_id:
             return json.dumps(gpt.get_all_examples())
