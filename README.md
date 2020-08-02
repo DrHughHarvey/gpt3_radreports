@@ -133,7 +133,7 @@ Nothing concerning was found.
 <span style="color:orange">This part is incomplete... be warned!</span>
 
 Test the API is working by running the example script included in the repository:  
-`python gpt3/examples/run_radiologyreports.py`  
+`python gpt3/examples/run_radiologyexamples.py`  
 
 
 Create a simple user interface configuration with a description, a button and some placeholder text  
