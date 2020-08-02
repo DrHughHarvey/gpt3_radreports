@@ -101,11 +101,13 @@ def demo_web_app(gpt, config=UIConfig()):
     def translate():
         # pylint: disable=unused-variable
         prompt = request.json["prompt"]
-        response = gpt.submit_request(prompt)
-        offset = 0
-        if not gpt.append_output_prefix_to_query:
-            offset = len(gpt.output_prefix)
-        return {'text': response['choices'][0]['text'][offset:]}
-
+        try:
+            response = gpt.submit_request(prompt)
+            offset = 0
+            if not gpt.append_output_prefix_to_query:
+                offset = len(gpt.output_prefix)
+            return {'status': 'success','text': response['choices'][0]['text'][offset:]}
+        except:
+            return {'status': 'error', 'text': 'Error occurred while accessing GPT-3 API.'}
     subprocess.Popen(["yarn", "start"])
     app.run()

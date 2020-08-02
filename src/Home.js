@@ -18,7 +18,8 @@ class Home extends React.Component {
             buttonText: "Submit",
             description: "Description",
             showExampleForm: false,
-            examples: {}
+            examples: {},
+            error: false,
         };
         // Bind the event handlers
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -53,8 +54,11 @@ class Home extends React.Component {
         let body = {
             prompt: this.state.input
         };
-        axios.post(TRANSLATE_API_URL, body).then(({ data: { text } }) => {
-            this.setState({ output: text, showCopy: true });
+        axios.post(TRANSLATE_API_URL, body).then(({ data: {status, text } }) => {
+            if (status === 'success')
+                this.setState({ output: text, showCopy: true, error:false });
+            else
+                this.setState({ output: text, showCopy: false, error:true });
         });
     }
 
@@ -78,9 +82,13 @@ class Home extends React.Component {
                     </Button>
                 </Form>
                 <div className="row">
-                <div className="col-md-10">
-                    {this.state.output}
-                </div>
+                    {this.state.error ? (<div className="col-md-10" style={{color: 'red'}}>
+                        {this.state.output}
+                    </div>) :
+                        (<div className="col-md-10" >
+                        {this.state.output}
+                    </div>)}
+
                     <div className="col-md-2">
                         {this.state.showCopy ? (
                         <CopyToClipboard text={this.state.output}
