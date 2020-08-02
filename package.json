@@ -11,9 +11,12 @@
     "lodash": "^4.17.19",
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
+    "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "^16.13.1",
+    "react-icons": "^3.10.0",
     "react-latex": "^2.0.0",
     "react-latex-next": "^1.2.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.1"
   },
   "scripts": {
