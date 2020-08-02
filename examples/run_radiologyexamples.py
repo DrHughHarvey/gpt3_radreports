@@ -8,7 +8,7 @@ from api import demo_web_app
 
 
 # Construct GPT object and show some examples
-gpt = GPT(engine="davinci", temperature=0.5, max_tokens=100)
+gpt = GPT(engine="davinci", temperature=0.2, max_tokens=1000)
 
 gpt.add_example(Example("There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis", "There are several dense objects typical of gallstones within the gallbladder"))
 gpt.add_example(Example("The lungs and pleura are clear and the cardiomedistinal silhouette is unremarkable. No rib lesions.", "Normal chest X-ray."))
