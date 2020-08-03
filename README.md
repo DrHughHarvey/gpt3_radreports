@@ -51,9 +51,7 @@ Go to the root folder of the repository:
 `cd /your/path/to/the/root/gpt3`  
 Install the requirements package  
 `pip install -r api/requirements.txt`  
-Open TextEdit and type the following line, exchanging 'INSERTKEYHERE' for your OpenAi secret key:
-`OPENAI_KEY=sk-INSERTKEYHERE`  
-Save the file as'openai.cfg' into your api.  
+Open openai.cfg in TextEdit and exchange`INSERT_OPEN_AI_KEY_HERE`for your OpenAI secret key.
 Link your gpt3 virtual environment to the config file containing the API key.   
 `export OPENAI_CONFIG=/YOUR/PATH/TO/THE/CONFIG/FILE/api/openai.cfg`  
 Install yarn (this will create a file in your repository called `yarn.lock` which you should not delete)   
@@ -67,7 +65,7 @@ Load the web app by running the example script included in the gpt3_radreports r
 `python /examples/run_radiologyexamples.py`  
 
 Your browser will open a new tab which should display the following:
-![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/web_app.png?raw=true "Title")  
+![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/web_app_UI.png?raw=true "Title")  
 
 There are two tabs in the web app  
 1. Home - for querying GPT3 via the API  
@@ -94,7 +92,7 @@ gpt.add_example(Example("There are several hyerechoic calcific foci within the g
 
 When you load the web app and visit the examples tab, you will see the six examples I have selected to _prime_ GPT3. You can add more of your own by clicking the 'add example' button at the bottom.    
  
-![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_example.png?raw=true "Title")  
+![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_examples.png?raw=true "Title")  
 
 Stop the web app at any time by running command-c in Terminal.  
 
