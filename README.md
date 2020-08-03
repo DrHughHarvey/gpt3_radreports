@@ -95,8 +95,10 @@ gpt.add_example(Example("There are several hyerechoic calcific foci within the g
 ```
 
 When you load the web app and visit the examples tab, you will see the six examples I have selected to _prime_ GPT3. You can add more of your own by clicking the 'add example' button at the bottom.    
+ 
+![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_example.png?raw=true "Title")  
 
-![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_example.png?raw=true "Title")
+Stop the web app at any time by running command-c in Terminal.  
 
 These are the 6 pre-selected examples. You can _prime_ GPT3 using different examples, and take note of how the outputs change.    
 
