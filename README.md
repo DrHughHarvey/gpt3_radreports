@@ -94,6 +94,8 @@ When you load the web app and visit the examples tab, you will see the six examp
 
 ![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_example.png?raw=true "Title")
 
+These are the 6 pre-selected examples. You can _prime_ GPT3 using different examples, and take note of how the outputs change.   
+
 ### Example 1
 ```
 *input*  
@@ -141,8 +143,3 @@ The heart size is normal and there is no pericardial effusion. The aorta and gre
 *output*  
 Nothing concerning was found.
 ```
-
-
-
-
-
