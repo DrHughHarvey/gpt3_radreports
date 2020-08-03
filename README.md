@@ -69,8 +69,11 @@ Load the web app by running the example script included in the gpt3_radreports r
 `python /examples/run_radiologyexamples.py`  
 
 Your browser will open a new tab which should display the following:
-![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/web_app.png?raw=true "Title")
-There are two tabs in the web app - one for querying GPT3, the other for _priming_.
+![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/web_app.png?raw=true "Title")  
+
+There are two tabs in the web app  
+1. Home - for querying GPT3 via the API  
+1. Examples - for _priming_ GPT3  
 
 ### Create a training pathway to 'prime' GPT3 for the specific task
 
@@ -88,13 +91,14 @@ gpt = GPT(engine="davinci", temperature=0.2, max_tokens=1000)
 Next we created some examples we want to use to _prime_ GPT3.  
 e.g:  
 ```
-gpt.add_example(Example("There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis", "There are several dense objects typical of gallstones within the gallbladder"))
+gpt.add_example(Example("There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis", "There are several dense objects typical of gallstones within the gallbladder"))  
 ```
-When you load the web app and visit the examples tab, you will see the six examples I have selected to _prime_ GPT3. You can add more of your own by clikcing the 'add example' button at the bottom.  
+
+When you load the web app and visit the examples tab, you will see the six examples I have selected to _prime_ GPT3. You can add more of your own by clicking the 'add example' button at the bottom.    
 
 ![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_example.png?raw=true "Title")
 
-These are the 6 pre-selected examples. You can _prime_ GPT3 using different examples, and take note of how the outputs change.   
+These are the 6 pre-selected examples. You can _prime_ GPT3 using different examples, and take note of how the outputs change.    
 
 ### Example 1
 ```
