@@ -1,6 +1,6 @@
 {
-  "short_name": "GPT-3 Sandbox",
-  "name": "GPT-3 Sandbox",
+  "short_name": "gpt3_radreports",
+  "name": "gpt3_radreports",
   "icons": [],
   "start_url": ".",
   "display": "standalone",
