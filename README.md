@@ -33,9 +33,10 @@ The tool is loaded in three parts:
 The code in this repo is based on`ShreyaShankar's gpt3-sandbox`-> [here](https://github.com/shreyashankar/gpt3-sandbox)  
 I also recommend this [youtube video](https://youtu.be/9g66yO0Jues) to explain various elements of this sandbox.
 
-_The following has only been tested on MacOS Catalina_
+_The following has only been tested on MacOS Catalina_  
 
-* Obtain [OpenAI API key](https://beta.openai.com/)
+* Obtain [OpenAI API key](https://beta.openai.com/) - there is a waiting list, so be patient!
+* Run `Terminal`  
 * Install [python3](https://realpython.com/installing-python/) 
 * Install [yarn](https://classic.yarnpkg.com/en/docs/install/#mac-stable)
 
@@ -46,35 +47,36 @@ python3 -m venv $gpt3
 source gpt3/bin/activate
 ```
 
-Go to the root directory of the repository  
+Go to the root folder of the repository:    
 `cd /your/path/to/the/root/gpt3`  
 Install the requirements package  
 `pip install -r api/requirements.txt`  
-Save a file named openai.cfg into your api folder containing your API secret key as such (use TextEdit for this):  
+Save a file named openai.cfg into your api folder containing your API secret key as such - use TextEdit to create the file containing the following line:  
 `OPENAI_KEY=sk-INSERTKEYHERE`  
 Link your gpt3 virtual environment to the config file containing the API key.  
-`OPENAI_CONFIG=/your/path/to/the/config/file/api/openai.cfg`  
+`OPENAI_CONFIG=/YOUR/PATH/TO/THE/CONFIG/FILE/api/openai.cfg`  
 Install yarn packages  
 `yarn install`  
 
-If you are a Windows user, to run the demo, you will need to modify the following line inside  
-`api/demo_web_app.py`: `subprocess.Popen(["yarn", "start"])` to `subprocess.Popen(["yarn", "start"], shell=True)`
+_(If you are a Windows user, to run the demo, you will need to modify the following line inside)_  
+`api/demo_web_app.py`: `subprocess.Popen(["yarn", "start"])` to `subprocess.Popen(["yarn", "start"], shell=True)`  
 
 ### Load a web interface to allow user input and visualisation of the output  
 
-Once `yarn` is installed and the opeanai key has been linked (as above), you can load the web app.
+Once`yarn`is installed and the`opeanai.cfg`key has been linked (as above), you can load the web app.
 
-Load the web app by running the example script included in the repository:  
+Load the web app by running the example script included in the gpt3_radreports repository:  
 `python /examples/run_radiologyexamples.py`  
 
 Your browser will open a new tab which should display the following:
 ![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/web_app.png?raw=true "Title")
+There are two tabs in the web app - one for querying GPT3, the other for _priming_.
 
 ### Create a training pathway to 'prime' GPT3 for the specific task
 
-GPT3 can only 'solve' the task if it has been shown a few examples (known as 'few-shot learning'), so we need to create some cases for it to learn from - this is called _priming_. This is done using a simple python script. The full code is in `gpt3/examples/run_radiologyreports.py`  
+GPT3 can only 'solve' the task if it has been shown a few examples (known as 'few-shot learning'), so we need to create some cases for it to learn from - this is called _priming_. This is done using a simple python script, and the full code is in`gpt3/examples/run_radiologyreports.py`which loads the web app.
 
-To be able to send examples to GPT3 via our API we need create a 'GPT object' with the following parameters:   
+To be able to send examples to GPT3 via our API we created a 'GPT object' with the following parameters:   
 *`engine` - this will be `davinci` which is the current version of the GPT3 engine  
 *`temperature` - this is a setting between 0-1 which tells GPT3 how accurate or creative to  be - 0 being very accurate, 1 being more creative  
 *`max_tokens` - how many characters do we want the output to be?  
@@ -83,18 +85,14 @@ To be able to send examples to GPT3 via our API we need create a 'GPT object' wi
 gpt = GPT(engine="davinci", temperature=0.2, max_tokens=1000)
 ```
   
-Next we create some examples we want to use to _prime_ GPT3.  
-_You can change these, and add more, to help GPT3 better adjust to the task_   
+Next we created some examples we want to use to _prime_ GPT3.  
+e.g:  
 ```
 gpt.add_example(Example("There are several hyerechoic calcific foci within the gallbladder with significant posterior acoustic shadowing in keeping with cholecystolithiasis", "There are several dense objects typical of gallstones within the gallbladder"))
-gpt.add_example(Example("What are you?", "I'm an example."))
-gpt.add_example(Example("What are you?", "I'm an example."))
-gpt.add_example(Example("What are you?", "I'm an example."))
-gpt.add_example(Example("What are you?", "I'm an example."))
-gpt.add_example(Example("What are you?", "I'm an example."))
 ```
-  
-The examples I have used are as follows:  
+When you load the web app and visit the examples tab, you will see the six examples I have selected to _prime_ GPT3. You can add more of your own by clikcing the 'add example' button at the bottom.  
+
+![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_example.png?raw=true "Title")
 
 ### Example 1
 ```
