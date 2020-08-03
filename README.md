@@ -45,14 +45,18 @@ pip3 install virtualenv
 python3 -m venv $gpt3   
 source gpt3/bin/activate
 ```
+
+In root directory of the repository,
 Install the requirements  
-`pip install -r gpt3/api/requirements.txt`  
-Save a file named openai.cfg into your api folder containing your API secret key as such:  
+`pip install -r api/requirements.txt`  
+Save a file named openai.cfg into your api folder containing your API secret key as such(This step is only required if you intend to use `GPT3` API. ):  
 `OPENAI_KEY=sk-INSERTKEYHERE`  
-Link your gpt3 virtual environment to the config file containing the API key   
-`OPENAI_CONFIG=gpt3/api/openai.cfg`  
-  
-    
+Link your gpt3 virtual environment to the config file containing the API key. If you are a Linux user, ``export OPENAI_CONFIG=`pwd`/api/openai.cfg`` and `set OPENAI_CONFIG=%CD%\api\openai.cfg` (for Windows users)  
+Install yarn packages
+`yarn install`
+ 
+
+If you are a Windows user, to run the demo, you will need to modify the following line inside `api/demo_web_app.py`: `subprocess.Popen(["yarn", "start"])` to `subprocess.Popen(["yarn", "start"], shell=True)`
 
 ### Create a training pathway to 'prime' GPT3 for the specific task
 
@@ -133,7 +137,7 @@ Nothing concerning was found.
 <span style="color:orange">This part is incomplete... be warned!</span>
 
 Test the API is working by running the example script included in the repository:  
-`python gpt3/examples/run_radiologyexamples.py`  
+`python examples/run_radiologyexamples.py`  
 
 
 Create a simple user interface configuration with a description, a button and some placeholder text  
