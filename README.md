@@ -51,9 +51,7 @@ Go to the root folder of the repository:
 `cd /your/path/to/the/root/gpt3`  
 Install the requirements package  
 `pip install -r api/requirements.txt`  
-Open TextEdit and type the following line, exchanging 'INSERTKEYHERE' for your OpenAi secret key:
-`OPENAI_KEY=sk-INSERTKEYHERE`  
-Save the file as'openai.cfg' into your api.  
+Open openai.cfg in TextEdit and exchange`INSERT_OPEN_AI_KEY_HERE`for your OpenAI secret key.
 Link your gpt3 virtual environment to the config file containing the API key.   
 `export OPENAI_CONFIG=/YOUR/PATH/TO/THE/CONFIG/FILE/api/openai.cfg`  
 Install yarn (this will create a file in your repository called `yarn.lock` which you should not delete)   
