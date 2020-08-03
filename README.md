@@ -68,7 +68,7 @@ Load the web app by running the example script included in the repository:
 `python /examples/run_radiologyexamples.py`  
 
 Your browser will open a new tab which should display the following:
-![Alt text](relative/path/to/img.jpg?raw=true "Title")
+![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/web_app.png?raw=true "Title")
 
 ### Create a training pathway to 'prime' GPT3 for the specific task
 
