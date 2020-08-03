@@ -43,7 +43,7 @@ _The following has only been tested on MacOS Catalina_
 Clone [this](https://github.com/DrHughHarvey/gpt3_radreports) repository, and in Terminal install the Python virtual environnment package, create a new virtual environment called 'gpt3' and activate it:  
 ```
 pip3 install virtualenv  
-python3 -m venv $gpt3   
+python3 -m venv gpt3   
 source gpt3/bin/activate
 ```
 
