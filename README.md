@@ -21,12 +21,12 @@ There are several dense objects typical of gallstones within the gallbladder
 
 In keeping with the recent trend towards a more patient-focussed model of healthcare, and increasing appetite for digital tools to enable and empower both physicians and patients, this project aims to bridge the 'language' barrier that lies between radiologists and patients by using the powerful natural language capabilities of GPT3.
 
-The project is in three parts:
+The tool is loaded in three parts:
 1. Set up the API configuration in a virtual environment
-1. Create a training pathway to 'prime' GPT3 for the specific task
-1. Build a web interface to allow user input and visualisation of the output
+1. Load a web interface to allow user input and visualisation of the output
+1. 'Prime' GPT3 for the specific task using examples
 
-## Building the system
+## How to run gpt3_radreports
 
 ### Set up the API configuration in a virtual environment
 
@@ -46,17 +46,29 @@ python3 -m venv $gpt3
 source gpt3/bin/activate
 ```
 
-In root directory of the repository,
-Install the requirements  
+Go to the root directory of the repository  
+`cd /your/path/to/the/root/gpt3`  
+Install the requirements package  
 `pip install -r api/requirements.txt`  
-Save a file named openai.cfg into your api folder containing your API secret key as such(This step is only required if you intend to use `GPT3` API. ):  
+Save a file named openai.cfg into your api folder containing your API secret key as such (use TextEdit for this):  
 `OPENAI_KEY=sk-INSERTKEYHERE`  
-Link your gpt3 virtual environment to the config file containing the API key. If you are a Linux user, ``export OPENAI_CONFIG=`pwd`/api/openai.cfg`` and `set OPENAI_CONFIG=%CD%\api\openai.cfg` (for Windows users)  
-Install yarn packages
-`yarn install`
- 
+Link your gpt3 virtual environment to the config file containing the API key.  
+`OPENAI_CONFIG=/your/path/to/the/config/file/api/openai.cfg`  
+Install yarn packages  
+`yarn install`  
 
-If you are a Windows user, to run the demo, you will need to modify the following line inside `api/demo_web_app.py`: `subprocess.Popen(["yarn", "start"])` to `subprocess.Popen(["yarn", "start"], shell=True)`
+If you are a Windows user, to run the demo, you will need to modify the following line inside  
+`api/demo_web_app.py`: `subprocess.Popen(["yarn", "start"])` to `subprocess.Popen(["yarn", "start"], shell=True)`
+
+### Load a web interface to allow user input and visualisation of the output  
+
+Once `yarn` is installed and the opeanai key has been linked (as above), you can load the web app.
+
+Load the web app by running the example script included in the repository:  
+`python /examples/run_radiologyexamples.py`  
+
+Your browser will open a new tab which should display the following:
+![Alt text](relative/path/to/img.jpg?raw=true "Title")
 
 ### Create a training pathway to 'prime' GPT3 for the specific task
 
@@ -131,31 +143,6 @@ The heart size is normal and there is no pericardial effusion. The aorta and gre
 *output*  
 Nothing concerning was found.
 ```
-
-### Build a web interface to allow user input and visualisation of the output  
-
-<span style="color:orange">This part is incomplete... be warned!</span>
-
-Test the API is working by running the example script included in the repository:  
-`python examples/run_radiologyexamples.py`  
-
-
-Create a simple user interface configuration with a description, a button and some placeholder text  
-```
-config = UIConfig(
-    description="Translate clinical radiology reports into lay versions",
-    button_text="Go",
-    placeholder="Lay version",
-    show_example_form=True,
-)
-```
-
-Load the web app  
-
-```
-demo_web_app(gpt, config)
-```
-
 
 
 
