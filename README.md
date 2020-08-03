@@ -54,7 +54,7 @@ Install the requirements package
 Open TextEdit and Save a file named openai.cfg into your api folder containing your API secret key using the folliwng line:
 `OPENAI_KEY=sk-INSERTKEYHERE`  
 Link your gpt3 virtual environment to the config file containing the API key.  
-`OPENAI_CONFIG=/YOUR/PATH/TO/THE/CONFIG/FILE/api/openai.cfg`  
+`export OPENAI_CONFIG=/YOUR/PATH/TO/THE/CONFIG/FILE/api/openai.cfg`  
 Install yarn packages  
 `yarn install`  
 
