@@ -71,7 +71,7 @@ class Home extends React.Component {
                         <Form.Control
                             type="text"
                             as="textarea"
-                            placeholder="Enter text here"
+                            placeholder="Enter a clinical radiology report here (max 1000 characters)"
                             value={this.state.input}
                             onChange={this.handleInputChange}
                         />
