@@ -43,7 +43,7 @@ _The following has only been tested on MacOS Catalina_
 Clone [this](https://github.com/DrHughHarvey/gpt3_radreports) repository, and in Terminal install the Python virtual environnment package, create a new virtual environment called 'gpt3' and activate it:  
 ```
 pip3 install virtualenv  
-python3 -m venv $gpt3   
+python3 -m venv gpt3   
 source gpt3/bin/activate
 ```
 
@@ -51,17 +51,15 @@ Go to the root folder of the repository:
 `cd /your/path/to/the/root/gpt3`  
 Install the requirements package  
 `pip install -r api/requirements.txt`  
-Save a file named openai.cfg into your api folder containing your API secret key as such - use TextEdit to create the file containing the following line:  
+Open TextEdit and type the following line, exchanging 'INSERTKEYHERE' for your OpenAi secret key:
 `OPENAI_KEY=sk-INSERTKEYHERE`  
-Link your gpt3 virtual environment to the config file containing the API key.  
-`OPENAI_CONFIG=/YOUR/PATH/TO/THE/CONFIG/FILE/api/openai.cfg`  
-Install yarn packages  
+Save the file as'openai.cfg' into your api.  
+Link your gpt3 virtual environment to the config file containing the API key.   
+`export OPENAI_CONFIG=/YOUR/PATH/TO/THE/CONFIG/FILE/api/openai.cfg`  
+Install yarn (this will create a file in your repository called `yarn.lock` which you should not delete)   
 `yarn install`  
 
-_(If you are a Windows user, to run the demo, you will need to modify the following line inside)_  
-`api/demo_web_app.py`: `subprocess.Popen(["yarn", "start"])` to `subprocess.Popen(["yarn", "start"], shell=True)`  
-
-### Load a web interface to allow user input and visualisation of the output  
+### Load the web interface to allow user input and visualisation of the output  
 
 Once`yarn`is installed and the`opeanai.cfg`key has been linked (as above), you can load the web app.
 
@@ -75,7 +73,7 @@ There are two tabs in the web app
 1. Home - for querying GPT3 via the API  
 1. Examples - for _priming_ GPT3  
 
-### Create a training pathway to 'prime' GPT3 for the specific task
+### 'Prime' GPT3 for the specific task using examples
 
 GPT3 can only 'solve' the task if it has been shown a few examples (known as 'few-shot learning'), so we need to create some cases for it to learn from - this is called _priming_. This is done using a simple python script, and the full code is in`gpt3/examples/run_radiologyreports.py`which loads the web app.
 
@@ -95,8 +93,10 @@ gpt.add_example(Example("There are several hyerechoic calcific foci within the g
 ```
 
 When you load the web app and visit the examples tab, you will see the six examples I have selected to _prime_ GPT3. You can add more of your own by clicking the 'add example' button at the bottom.    
+ 
+![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_example.png?raw=true "Title")  
 
-![Alt text](https://github.com/DrHughHarvey/gpt3_radreports/blob/master/images/add_example.png?raw=true "Title")
+Stop the web app at any time by running command-c in Terminal.  
 
 These are the 6 pre-selected examples. You can _prime_ GPT3 using different examples, and take note of how the outputs change.    
 
